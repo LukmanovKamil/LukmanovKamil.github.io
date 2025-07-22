@@ -1,11 +1,11 @@
 @font-face {
     font-family: "TTNorms-Regular";
-    src: url(/Font/TTNorms-Regular.ttf);
+    src: url(/Font/TTNorms-Regular.woff);
 }
 
 @font-face {
     font-family: "TTNorms-Bold";
-    src: url(/Font/TTNorms-Bold.ttf);
+    src: url(/Font/TTNorms-Bold.woff);
 }
 
 *{
