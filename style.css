@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "TTNorms-Regular";
+    src: url(/font/TTNorms-Regular.ttf);
+}
+
+@font-face {
+    font-family: "TTNorms-Bold";
+    src: url(/font/TTNorms-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Obelix-Pro";
+    src: url(/font/Obelix-Pro.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "TTNorms-Regular";
+    color: #f7fcfc;
+    text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background: #f7fcfc
+}
+
+
+
+
+
+
+
+/* Скролл бар */
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f7fcfc;
+  border-radius: 20px;
+  border: 3px solid #961f96;
+}
+
+
+
+
+
+
+
+
+/* Якорь */
+#top img {
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #481550;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+#top:hover {
+    transform: scale(1.1);
+}

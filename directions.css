@@ -1,0 +1,339 @@
+/* Выбор направления */
+.vb {
+    padding-top: 100px;
+}
+
+.vb h1 {
+    font-family: "TTNorms-bold";
+    color: #481550;
+    font-size: 40px;
+    text-align: center;
+}
+
+.vb h2 {
+    color: #481550;
+    text-align: center;
+    color: #481550;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: normal
+}
+
+
+
+
+
+/* Направления */
+.nap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+
+.np {
+  margin: 25px 0;
+  cursor: text;
+}
+
+.foto {
+    border-radius: 500px;  
+    cursor: pointer;
+}
+
+.foto img {
+    width: 250px;
+    pointer-events: none
+}
+
+.activ {
+    background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
+    transition: all 250ms ease;
+    position: relative;
+    transform: scale(1.0)
+}
+
+.foto:hover {
+    background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
+    transition: all 250ms ease;
+    position: relative;
+    transform: scale(1.1)
+}
+
+.ft {
+    position:absolute;
+    margin-top: 1px;
+    margin-left: -250px;
+}
+
+.ft:hover {
+    transition: all 50ms ease;
+    margin-top: -6px;
+    margin-left: -257px;
+}
+
+.np p {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+    color: #481550;
+    padding-top: 10px;
+}
+
+.np p b {
+    font-size: 25px;
+    color: #481550;
+}
+
+
+
+
+
+/* Педагоги */
+.ped {
+    display: flex;
+    justify-content: center;
+}
+
+.pd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pdg {
+    border-radius: 10vh;
+    pointer-events: none;
+    width: 70%;
+    margin: 25px;
+}
+
+.ped h1 {
+    padding: 20px 0 0 0; 
+    color: #481550;
+    font-family: "TTNorms-bold";
+    font-size: 55px;
+}   
+
+.ped h2 {
+    color: #481550;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: normal
+}
+
+.p {
+    text-align: center;
+    padding: 20px 0; 
+    width: 70%;
+    margin: 0 auto;
+}
+
+.p p {
+    text-align: center;
+    color: #481550;
+    font-size: 30px;    
+    padding: 20px 0; 
+}
+
+.p b {
+    color: #481550;
+}
+
+.p u {
+    color: #481550;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+
+
+
+
+
+/* Слайдер */
+.slider {
+    width: 100%;
+    max-width: 70%;
+    overflow: hidden;
+    position: relative;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 10vh;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(223, 9, 194, 0.0);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 100%;
+}
+
+.prev:hover, .next:hover {
+    background: rgb(189, 9, 129);
+}
+
+.prev {
+    left: 10px;
+}
+
+.prev img{
+    height: 30px;
+}
+
+.next {
+    right: 10px;
+}
+
+.next img{
+    height: 30px;
+}
+
+
+
+
+
+
+
+/* Плеер */
+.video-container {
+  display: block;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    max-width: 70%;
+    position: relative;
+    display: inline-block;
+}
+
+.video-container img {
+    height: 40px;
+    width: 40px;
+}
+
+.play_btn:hover {
+    position: relative;
+    transform: scale(1.1)
+}
+
+.controls_stop:hover {
+    position: relative;
+    transform: scale(1.1)
+}
+
+.video {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 10vh 10vh 0 0;
+    cursor: pointer;
+}
+
+.controls {
+    background: linear-gradient(26deg,#e5d339 0%, #d3599c 5%, #c754b7 10%, #961f96 30%, #d13999 95%, #e5d339 100%);
+    border-radius: 0 0 10vh 10vh;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    margin-top: -5px;
+}
+
+.controls_stop {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.controls_play {
+    cursor: pointer;
+}
+
+.controls_progress {
+    display: flex;
+    width: 100%;
+    margin: 0 0px 0 20px;
+}
+
+.controls_time {
+    margin-left: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #f7fcfc;
+}
+
+.overlay img {
+    width: 90px; /* Устанавливаем ширину изображения, изменить по необходимости */
+    height: auto; /* Автоматическое изменение высоты согласно пропорциям */
+}
+
+.play-overlay {
+    position: absolute; /* Позволяет накладывать изображение поверх видео */
+    top: 55%; /* Ставим верхний край на 50% от высоты контейнера */
+    left: 50%; /* Ставим левый край на 50% от ширины контейнера */
+    transform: translate(-50%, -50%); /* Сдвигаем изображение обратно на 50% по высоте и ширине */
+    cursor: pointer; /* Указывает, что элемент кликабелен */
+    width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
+    height: auto; /* Автоматическое изменение высоты согласно пропорциям */
+    z-index: 10; /* Убедитесь, что изображение выше, чем видео (если необходимо) */
+   
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+ 
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #f800f8;
+    border-radius: 5px;
+    width: 10px;
+    height: 30px;
+    margin-top: -10px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #f7fcfc;
+    border-radius: 5px;
+}

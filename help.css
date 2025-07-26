@@ -1,0 +1,73 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help {
+    padding: 40px 0;
+    display: block;
+    text-align: center;
+
+}
+
+.help h1 {
+    font-family: "TTNorms-bold";
+    color: #481550;
+    font-size: 40px;
+    text-align: center;
+    padding: 0 0 50px 0;
+}
+
+.help img{
+    width: 70%;
+    border-radius: 10vh;
+}
+
+.vop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    flex-direction: column;
+}
+
+.v {
+    display: block;
+    align-items: center;
+    margin: 40px 0;
+    width: 70%;
+}
+
+.v h1{
+    color: #481550;
+    text-align: center;
+    font-size: 30px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.v h2{
+    color: #481550;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+    padding: 0px 0 30px 0;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.v p{
+    color: #481550;
+     text-align: center;
+    font-size: 20px;
+}
+
+.v li{
+    color: #481550;
+    font-size: 20px;
+    padding: 5px;
+    width: 70%;
+    margin: 0 auto;
+}
