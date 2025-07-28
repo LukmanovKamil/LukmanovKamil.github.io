@@ -32,6 +32,7 @@ header .name {
 header .name1 {
     font-family: "TTNorms-bold";
     font-size: 26px;
+    white-space: nowrap;
 }
 
 header .name2 {
@@ -40,6 +41,7 @@ header .name2 {
 
 header .nav a {
     margin: 0 15px;
+    white-space: nowrap;
 }
 
 header .active {
@@ -48,7 +50,44 @@ header .active {
     border-radius: 10px;
 }
 
+@media (hover: hover) {
 header .nav a:not(.active):hover {
     border-bottom: 4px solid #f7fcfc;
     border-radius: 10px;
+}
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+    }
+
+    header .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+    header .nav {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .nav a {
+        margin: 10px 25px;
+        font-size: 16px;
+    }
+
+    header .name1 {
+        font-size: 22px;
+    }
+
+    header .name2 {
+        font-size: 13px;
+    }
 }

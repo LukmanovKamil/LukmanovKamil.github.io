@@ -13,10 +13,9 @@
 .vb h2 {
     color: #481550;
     text-align: center;
-    color: #481550;
     font-size: 30px;
     font-style: italic;
-    font-weight: normal
+    font-weight: normal;
 }
 
 
@@ -39,7 +38,7 @@
 }
 
 .foto {
-    border-radius: 500px;  
+    border-radius: 100%;  
     cursor: pointer;
 }
 
@@ -55,23 +54,26 @@
     transform: scale(1.0)
 }
 
+@media (hover: hover) {
 .foto:hover {
     background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
     transition: all 250ms ease;
     position: relative;
     transform: scale(1.1)
 }
-
+}
 .ft {
     position:absolute;
     margin-top: 1px;
     margin-left: -250px;
 }
 
+@media (hover: hover) {
 .ft:hover {
     transition: all 50ms ease;
     margin-top: -6px;
     margin-left: -257px;
+}
 }
 
 .np p {
@@ -116,13 +118,15 @@
     color: #481550;
     font-family: "TTNorms-bold";
     font-size: 55px;
+    text-align: center;
 }   
 
 .ped h2 {
     color: #481550;
     font-size: 30px;
     font-style: italic;
-    font-weight: normal
+    font-weight: normal;
+    text-align: center;
 }
 
 .p {
@@ -196,8 +200,10 @@
     border-radius: 100%;
 }
 
+@media (hover: hover) {
 .prev:hover, .next:hover {
     background: rgb(189, 9, 129);
+}
 }
 
 .prev {
@@ -336,4 +342,114 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: pointer;
     background: #f7fcfc;
     border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+/* Выбор направления */
+.vb {
+    padding-top: 30px;
+}
+
+.vb h1 {
+    font-size: 25px;
+}
+
+.vb h2 {
+    font-size: 20px;
+}
+/* Направления */
+.nap {
+    margin: 20px 0;
+}
+
+.np {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto img {
+    width: 150px;
+}
+
+.ft {
+    margin-left: -150px;
+}
+
+.np p {
+    font-size: 16px;
+    padding-top: 0px;
+}
+
+.np p b {
+    font-size: 22px;
+    color: #481550;
+}
+/* Педагоги */
+.pdg {
+    border-radius: 0vh;
+    width: 100%;
+    margin: 0px;
+}
+
+.ped h1 {
+    padding: 20px 0 0 0; 
+    font-size: 30px;
+}   
+
+.ped h2 {
+    font-size: 22px;
+}
+
+.p {
+    padding: 20px 0; 
+    width: 90%;
+}
+
+.p p {
+    font-size: 22px;    
+    padding: 10px 0; 
+}
+
+.p b {
+    font-size: 26px;
+}
+
+.p u {
+    font-size: 26px;
+}
+/* Слайдер */
+.slider {
+    max-width: 100%;
+    margin: 10px auto;
+    border-radius: 0vh;
+}
+/* Плеер */
+.video-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+.video {
+    border-radius: 0vh 0vh 0 0;
+}
+
+.controls {
+    border-radius: 0 0 0vh 0vh;
+    padding: 4px 20px;
+}
+
+.overlay img {
+    width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
+}
 }
