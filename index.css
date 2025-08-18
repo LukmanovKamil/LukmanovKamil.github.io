@@ -1,0 +1,115 @@
+.container {
+    padding: 50px 0;
+    width: 70%;
+    margin: auto;
+}
+
+
+.plitka {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 16px; 
+}
+
+.bl {
+    flex: calc(33.33% - 16px); /* Полный контейнер разбит на 3 части по 33.33% */
+    border-radius: 5vh;
+}
+
+.block1 {
+    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
+}
+
+.block3 {
+    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
+    
+}
+
+.directions {
+    padding: 30px;
+}
+
+.directions h1{ 
+    font-family: "TTNorms-bold";
+    font-size: 30px;
+}
+
+.directions h2{
+    font-family: "TTNorms-Regular";
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.images {
+    display: flex; 
+    flex-wrap: wrap;
+    padding: 40px 0;
+    justify-content: center;
+}
+
+.images img {
+    height: 140px;
+    margin: 5px; 
+}
+
+.blo {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%; 
+}
+.text h1{
+    font-family: "TTNorms-bold";
+    color: #481550;
+    font-size: 30px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column; 
+    padding: 30px;
+    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
+    border-radius: 5vh;
+    align-items: flex-start;
+    height: 50%;
+}
+
+.contact h1{ 
+    font-family: "TTNorms-bold";
+    font-size: 30px;
+}
+
+.contact h2{
+    font-family: "TTNorms-Regular";
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.help {
+    padding: 30px;
+    text-align: center;
+}
+
+.help img{
+    height: 300px;
+    padding: 40px;
+}
+
+.help h1{ 
+    font-family: "TTNorms-bold";
+    font-size: 30px;
+    text-align: left;
+}
+
+.help h2{
+    font-family: "TTNorms-Regular";
+    font-size: 15px;
+    font-weight: normal;
+    text-align: left;
+}

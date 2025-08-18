@@ -1,5 +1,5 @@
 header {
-    background-image: linear-gradient(26deg,#e5d339 0%, #af2c7f 15%, #671a7c 25%,#5e1f5a 75%, #d13999 100%);
+    background: var(--gradient);
     display: flex;
     height: 120px;
 }
@@ -8,7 +8,7 @@ header .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1000px;
+    width: 70%;
     margin: auto;
 }
 
@@ -18,7 +18,7 @@ header .logo {
 }
 
 header .logo img {
-    width: 100px;
+    width: 85px;
     pointer-events: none
 }
 
@@ -40,36 +40,42 @@ header .name2 {
 }
 
 header .nav a {
-    margin: 0 15px;
+    margin: 0px 15px;
     white-space: nowrap;
 }
 
 header .active {
     font-size: 18px;
-    border-bottom: 4px solid #f7fcfc;
+    border-bottom: 4px solid var(--light);
     border-radius: 10px;
 }
 
 @media (hover: hover) {
 header .nav a:not(.active):hover {
-    border-bottom: 4px solid #f7fcfc;
+    border-bottom: 4px solid var(--light);
     border-radius: 10px;
 }
 }
 
+
+
+
+
+
+
+
 @media (max-width: 768px) {
+
     header {
         height: auto;
     }
 
     header .header {
         flex-direction: column;
-        padding: 10px;
+        padding: 5px;
+        width: 100%;
     }
 
-    header .logo {
-        margin-bottom: 10px;
-    }
     header .nav {
         display: flex;
         width: 100%;
@@ -79,15 +85,20 @@ header .nav a:not(.active):hover {
     }
 
     header .nav a {
-        margin: 10px 25px;
+        margin: 5px 20px;
         font-size: 16px;
     }
 
+    header .name {
+    margin: 0 0 0 30px;
+}
+
     header .name1 {
-        font-size: 22px;
+        font-size: 25px;
     }
 
     header .name2 {
-        font-size: 13px;
+        font-size: 15px;
     }
+
 }

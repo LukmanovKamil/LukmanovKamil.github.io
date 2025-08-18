@@ -5,6 +5,7 @@
 
 .vb h1 {
     font-family: "TTNorms-bold";
+   font-weight: normal;
     color: #481550;
     font-size: 40px;
     text-align: center;
@@ -48,7 +49,7 @@
 }
 
 .activ {
-    background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
+    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
     transition: all 250ms ease;
     position: relative;
     transform: scale(1.0)
@@ -56,7 +57,7 @@
 
 @media (hover: hover) {
 .foto:hover {
-    background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
+    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
     transition: all 250ms ease;
     position: relative;
     transform: scale(1.1)
@@ -79,14 +80,16 @@
 .np p {
     font-size: 20px;
     text-align: center;
-    margin: 10px 0;
     color: #481550;
-    padding-top: 10px;
 }
 
 .np p b {
     font-size: 25px;
     color: #481550;
+}
+
+.zag {   
+    padding-top: 10px;
 }
 
 
@@ -106,12 +109,20 @@
     flex-direction: column;
 }
 
+.b b{
+    color: #481550;
+    font-size: 22px;
+    text-decoration: underline;
+}
+
 .pdg {
-    border-radius: 10vh;
+    border-radius: 5vh;
     pointer-events: none;
     width: 70%;
     margin: 25px;
 }
+
+
 
 .ped h1 {
     padding: 20px 0 0 0; 
@@ -158,7 +169,6 @@
 
 
 
-
 /* Слайдер */
 .slider {
     width: 100%;
@@ -167,7 +177,7 @@
     position: relative;
     margin: 40px auto;
     text-align: center;
-    border-radius: 10vh;
+    border-radius: 5vh;
 }
 
 .slides {
@@ -202,7 +212,7 @@
 
 @media (hover: hover) {
 .prev:hover, .next:hover {
-    background: rgb(189, 9, 129);
+    background: #2c2c2c;
 }
 }
 
@@ -258,13 +268,13 @@
 .video {
     max-width: 100%;
     width: 100%;
-    border-radius: 10vh 10vh 0 0;
+    border-radius: 5vh 5vh 0 0;
     cursor: pointer;
 }
 
 .controls {
-    background: linear-gradient(26deg,#e5d339 0%, #d3599c 5%, #c754b7 10%, #961f96 30%, #d13999 95%, #e5d339 100%);
-    border-radius: 0 0 10vh 10vh;
+    background: #2c2c2c;
+    border-radius: 0 0 5vh 5vh;
     display: flex;
     align-items: center;
     padding: 20px 40px;
@@ -298,17 +308,19 @@
 .overlay img {
     width: 90px; /* Устанавливаем ширину изображения, изменить по необходимости */
     height: auto; /* Автоматическое изменение высоты согласно пропорциям */
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .play-overlay {
     position: absolute; /* Позволяет накладывать изображение поверх видео */
-    top: 55%; /* Ставим верхний край на 50% от высоты контейнера */
+    top: 50%; /* Ставим верхний край на 50% от высоты контейнера */
     left: 50%; /* Ставим левый край на 50% от ширины контейнера */
     transform: translate(-50%, -50%); /* Сдвигаем изображение обратно на 50% по высоте и ширине */
     cursor: pointer; /* Указывает, что элемент кликабелен */
     width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
     height: auto; /* Автоматическое изменение высоты согласно пропорциям */
     z-index: 10; /* Убедитесь, что изображение выше, чем видео (если необходимо) */
+   
    
 }
 
@@ -329,7 +341,7 @@ input[type=range]:focus {
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: #f800f8;
+    background: #f7fcfc;
     border-radius: 5px;
     width: 10px;
     height: 30px;
@@ -340,7 +352,7 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
     cursor: pointer;
-    background: #f7fcfc;
+    background: #9f9f9f;
     border-radius: 5px;
 }
 
@@ -404,12 +416,16 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .ped h1 {
     padding: 20px 0 0 0; 
-    font-size: 30px;
+    font-size: 24px;
 }   
 
 .ped h2 {
-    font-size: 22px;
+    font-size: 20px;
 }
+
+.b b{
+    font-size: 16px;
+} 
 
 .p {
     padding: 20px 0; 
@@ -417,16 +433,16 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 .p p {
-    font-size: 22px;    
+    font-size: 18px;    
     padding: 10px 0; 
 }
 
 .p b {
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .p u {
-    font-size: 26px;
+    font-size: 24px;
 }
 /* Слайдер */
 .slider {
@@ -434,6 +450,10 @@ input[type=range]::-webkit-slider-runnable-track {
     margin: 10px auto;
     border-radius: 0vh;
 }
+
+
+
+
 /* Плеер */
 .video-container {
     width: 100%;
@@ -446,7 +466,12 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .controls {
     border-radius: 0 0 0vh 0vh;
-    padding: 4px 20px;
+    padding: 0px 0px;
+    
+}
+
+.controls_play,.controls_stop,.controls_progress {
+    display: none
 }
 
 .overlay img {

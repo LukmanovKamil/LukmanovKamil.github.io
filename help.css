@@ -1,73 +1,411 @@
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Популярные вопросы */
 .help {
-    padding: 40px 0;
-    display: block;
-    text-align: center;
-
+    padding-top: 100px;
 }
 
 .help h1 {
     font-family: "TTNorms-bold";
-    color: #481550;
-    font-size: 40px;
+    color: var(--purple-dark);
+    font-size: 36px;
     text-align: center;
-    padding: 0 0 50px 0;
+    font-weight: normal;
 }
 
-.help img{
-    width: 70%;
-    border-radius: 10vh;
-}
-
-.vop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    flex-direction: column;
-}
-
-.v {
-    display: block;
-    align-items: center;
-    margin: 40px 0;
-    width: 70%;
-}
-
-.v h1{
-    color: #481550;
+.help h2 {
+    color: var(--purple-dark);
     text-align: center;
     font-size: 30px;
-    width: 70%;
-    margin: 0 auto;
+    font-weight: normal;
 }
 
-.v h2{
-    color: #481550;
+.help a {
+    color: var(--purple-dark);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.vlad {
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.vlad a{
+    width: 70%;
+}
+
+.vlad img{
+    width: 100%;
+    height: auto;
+    border-radius: 5vh;
+    pointer-events: none;
+}
+
+hr{
+    margin: 100px auto 0;
+    border: none;
+    border-top: 3px solid var(--purple-dark);
+    width: 70%;
+    border-radius: 50%;
+}
+
+
+
+.container {
+  margin: auto;
+  padding: 100px 0;
+  width: 70%;
+  height: auto;
+}
+.accordion h1 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    color: var(--purple-dark);
+    font-size: 36px;
+    border-bottom: 1px solid var(--purple-dark);
+    font-family: "TTNorms-bold";
     text-align: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+@media (hover: hover) {
+.accordion h1:hover,
+.accordion h1:hover::after {
+    cursor: pointer;
+    color: var(--purple-light);
+}
+}
+
+.accordion .content {
+    max-height: 0;
+    border-bottom: 2px solid var(--purple-light);
+    border-radius: 30px;
+    transition: all 0.2s ease ;
+}
+
+.accordion .content.activ {
+    padding: 20px 0;
+    max-height: 100%;
+}
+
+.accordion-header.activ {
+    color: var(--purple-light);
+}
+
+
+.accordion .content {
+    transform: scaleY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+}
+
+.accordion .content.activ {
+    transform: scaleY(1);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+
+
+
+
+
+.zag p{
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0 0 30px 0;
+}
+
+.zag u{
+    color: var(--purple-dark);
+    text-decoration: underline;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
+
+.text {
+    text-align: center;
+}
+
+
+.text p {
+    color: var(--purple-dark);
+    font-size: 22px;
+    padding: 5px;
+} 
+
+.text u{
+    color: var(--purple-dark);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.text b{
+    color: var(--purple-dark);
+    font-size: 24px;
+}
+
+.text a{
+    color: var(--purple-dark);
+}
+
+@media (hover: hover) {
+.text u:hover,a:hover{
+    color: var(--purple-light);
+}
+}
+
+
+
+
+
+
+.price {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: stretch; /* Делаем все блоки одинаковой высоты */
+}
+
+.pr {
+    flex: 1 1 200px; /* Позволить блоку расти */
+    margin: 10px; /* На всякий случай отступы между блоками */
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем по горизонтали */
+}
+
+.foto {
+    display: flex; /* Используем flex для центрирования */
+    justify-content: center; /* Центрируем горизонтально */
+    align-items: center; /* Центрируем вертикально */
+    margin-bottom: 10px; /* Отступы снизу */
+}
+
+.foto img {
+    width: 120px; /* Увеличиваем размер изображения */
+    height: 120px; /* Устанавливаем высоту для пропорционального отображения */
+    border-radius: 50%; /* Округляем изображение */
+    pointer-events: none;
+}
+
+.st p {
+    color: var(--purple-dark);
     font-size: 20px;
     font-style: italic;
+    text-align: center; /* Центрируем текст */
+}
+
+
+
+
+@media (max-width: 768px) {
+
+/* Популярные вопросы */
+.help {
+    padding-top: 30px;
+}
+
+.help h1 {
+    font-family: "TTNorms-bold";
+    color: var(--purple-dark);
+    font-size: 25px;
+    text-align: center;
     font-weight: normal;
-    padding: 0px 0 30px 0;
+}
+
+.help h2 {
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.help a {
+    color: var(--purple-dark);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.vlad {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.vlad a{
+    width: 100%;
+}
+
+.vlad img{
+    width: 100%;
+    height: auto;
+    border-radius: 0vh;
+    pointer-events: none;
+}
+
+hr{
+    margin: 30px auto 0;
+    border: none;
+    border-top: 3px solid var(--purple-dark);
     width: 70%;
-    margin: 0 auto;
+    border-radius: 50%;
 }
 
-.v p{
-    color: #481550;
-     text-align: center;
-    font-size: 20px;
+
+.container {
+  margin: auto;
+  padding: 20px 0;
+  width: 90%;
+  height: auto;
+}
+.accordion h1 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    color: var(--purple-dark);
+    font-size: 24px;
+    border-bottom: 1px solid var(--purple-dark);
+    font-family: "TTNorms-bold";
+    text-align: center;
+    cursor: pointer;
+    font-weight: normal;
 }
 
-.v li{
-    color: #481550;
+.accordion .content {
+    max-height: 0;
+    border-bottom: 2px solid var(--purple-light);
+    border-radius: 30px;
+    transition: all 0.2s ease ;
+}
+
+.accordion .content.activ {
+    padding: 20px 0;
+    max-height: 100%;
+}
+
+.accordion-header.activ {
+    color: var(--purple-light);
+}
+
+
+.accordion .content {
+    transform: scaleY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+}
+
+.accordion .content.activ {
+    transform: scaleY(1);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+
+
+
+
+
+.zag p{
+    color: var(--purple-dark);
+    text-align: center;
     font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 30px 0;
+}
+
+.zag u{
+    color: var(--purple-dark);
+    text-decoration: underline;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+.text {
+    text-align: center;
+}
+
+
+.text p {
+    color: var(--purple-dark);
+    font-size: 18px;
     padding: 5px;
-    width: 70%;
-    margin: 0 auto;
+} 
+
+.text u{
+    color: var(--purple-dark);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.text b{
+    color: var(--purple-dark);
+    font-size: 20px;
+}
+
+.text a{
+    color: var(--purple-dark);
+}
+
+
+
+
+
+
+
+.price {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: stretch; /* Делаем все блоки одинаковой высоты */
+}
+
+.pr {
+    flex: 1 1 100px; /* Позволить блоку расти */
+    margin: 10px; /* На всякий случай отступы между блоками */
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем по горизонтали */
+}
+
+.foto {
+    display: flex; /* Используем flex для центрирования */
+    justify-content: center; /* Центрируем горизонтально */
+    align-items: center; /* Центрируем вертикально */
+    margin-bottom: 5px; /* Отступы снизу */
+}
+
+.foto img {
+    width: 80px; /* Увеличиваем размер изображения */
+    height: 80px; /* Устанавливаем высоту для пропорционального отображения */
+    border-radius: 50%; /* Округляем изображение */
+    pointer-events: none;
+}
+
+.st p {
+    color: var(--purple-dark);
+    font-size: 20px;
+    font-style: italic;
+    text-align: center; /* Центрируем текст */
+}
+
+
+
+
 }
