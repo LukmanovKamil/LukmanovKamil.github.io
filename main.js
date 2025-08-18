@@ -45,10 +45,6 @@ $(".cc,.rr,.gg,.nn,.ll").hide();
 });
 
 
-
-
-
-
 // Слайдер
 $(document).ready(function () {
     const slides = document.querySelector('.slides');
@@ -87,7 +83,9 @@ $(document).ready(function () {
     });
 
 
-
+// Загрузка заголовка и подвала...
+$("#header").load("header.html");
+$("#footer").load("footer.html");
 
 
 
@@ -97,7 +95,7 @@ window.addEventListener('scroll', function() {
     const topButton = document.getElementById('top');
     
     // Установите значение для точки, после которой появляется кнопка
-    const scrollThreshold = 900; // Например, 300 пикселей
+    const scrollThreshold = 800; // Например, 300 пикселей
 
     if (window.scrollY > scrollThreshold) {
         topButton.style.display = 'block'; // Показать кнопку
@@ -155,16 +153,22 @@ videoContainers.forEach(container => {
     playOverlay.addEventListener('click', toggleVideoStatus);
     video.addEventListener('click', toggleVideoStatus);
 
+
     function stopVideo() {
-        video.pause();
-        video.currentTime = 0;
-        playBtnImg.src = './img/player/play.png';
-        playOverlay.style.display = 'block'; // Показываем изображение после остановки
-        
-        if (currentPlayer === video) {
-            currentPlayer = null; // Сбрасываем текущий плеер при остановке
-        }
+    video.pause();
+    video.currentTime = 0;
+    progress.value = 0; // Сбрасываем ползунок прогресса на 0
+    playBtnImg.src = './img/player/play.png';
+    playOverlay.style.display = 'block'; // Показываем изображение после остановки
+
+    // Устанавливаем постер, чтобы отобразить предпросмотр
+    video.load(); // Перезагружаем видео, чтобы установить постер
+    
+    if (currentPlayer === video) {
+        currentPlayer = null; // Сбрасываем текущий плеер при остановке
     }
+}
+
 
     stopBtn.addEventListener('click', stopVideo);
 
@@ -196,3 +200,25 @@ videoContainers.forEach(container => {
     progress.value = 0;
     progress.addEventListener('input', setProgress);
 });
+
+
+
+
+
+const items = document.querySelectorAll(".accordion-header");
+
+// Функция для активации вкладки
+function toggleAccordion() {
+    // Убираем активное состояние у всех элементов
+    items.forEach(item => {
+        item.classList.remove('activ');
+        item.nextElementSibling.classList.remove('activ');
+    });
+
+    // Устанавливаем активное состояние только на текущем элементе
+    this.classList.add('activ');
+    this.nextElementSibling.classList.add('activ');
+}
+
+// Добавляем слушатель событий на все элементы аккордеона
+items.forEach(item => item.addEventListener('click', toggleAccordion));

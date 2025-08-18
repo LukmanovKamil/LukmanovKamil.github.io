@@ -1,3 +1,4 @@
+/* Шрифты */
 @font-face {
     font-family: "TTNorms-Regular";
     src: url(/font/TTNorms-Regular.ttf);
@@ -8,32 +9,35 @@
     src: url(/font/TTNorms-Bold.ttf);
 }
 
-@font-face {
-    font-family: "Obelix-Pro";
-    src: url(/font/Obelix-Pro.ttf);
+/* Шаблоны */
+:root {
+    --light: #f7fcfc;
+    --dark: #171717;
+    --grey-light: #9f9f9f;
+    --gray-dark: #2c2c2c;
+    --purple-light: #9526c0;
+    --purple-dark: #5a205a;
+    --gradient: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
 }
 
+/* Базовые настройки */
 *{
     margin: 0;
     padding: 0;
     font-family: "TTNorms-Regular";
-    color: #f7fcfc;
+    color: var(--light);
     text-decoration: none;
 }
 
+/* Плавная анимация перемещений */
 html {
   scroll-behavior: smooth;
 }
 
+/* Белый фон */
 body {
-    background: #f7fcfc
+    background: var(--light);
 }
-
-
-
-
-
-
 
 /* Скролл бар */
 body::-webkit-scrollbar {
@@ -41,27 +45,21 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: linear-gradient(26deg,#e5d339 0%, #d3599c 15%, #c754b7 40%, #961f96 60%, #d13999 85%, #e5d339 100%);
+  background: var(--gray-dark);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #f7fcfc;
+  background: var(--grey-light);
   border-radius: 20px;
-  border: 3px solid #961f96;
+  border: 3px solid var(--gray-dark);
 }
-
-
-
-
-
-
-
 
 /* Якорь */
 #top img {
     width: 100px;
-    height: 100px;
+    height: 35px;
     pointer-events: none;
+    transition: filter 0.3s ease; /* Плавный переход для фильтра */
 }
 
 #top {
@@ -69,16 +67,14 @@ body::-webkit-scrollbar-thumb {
     right: 20px;
     bottom: 20px;
     width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #481550;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    color: #fff;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.0);
     border: none;
     outline: none;
     cursor: pointer;
     display: none;
     z-index: 10;
+
 }
 
 @media (hover: hover) {
@@ -92,28 +88,23 @@ body::-webkit-scrollbar-thumb {
 
 
 
+
+
+
+
+
+
+
+/* Адаптивность */
 @media (max-width: 768px) {
 /* Якорь */
 #top img {
-    width: 70px;
-    height: 70px;
-    pointer-events: none;
+    width: 75px;
+    height: 25px;
 }
 
 #top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: #481550;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    color: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    display: none;
-    z-index: 10;
+    width: 75px;
+    height: 25px;
 }
 }
