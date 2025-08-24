@@ -1,5 +1,284 @@
-.map{
-width: 100%; 
-height: 700px;
-border: none;
+* {
+    color: inherit;
+}
+
+
+header {
+    color: var(--light);
+}
+/* Контактная информация */
+.help {
+    padding-top: 70px;
+}
+
+.help h1 {
+    font-family: "TTNorms-bold";
+    color: var(--purple-dark);
+    font-size: 36px;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.help h2 {
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+
+/* Центрируем основной блок */
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+/* Контейнер с картой и контактами */
+.map-wrapper {
+  position: relative;
+  width: 70%;          /* 70% ширины экрана */
+  height: 700px;        /* Фиксированная высота */
+  border-radius: 5vh;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* Карта iframe */
+#map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Контактный блок поверх карты */
+.contact-box {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: var(--light);
+  padding: 30px;
+  border-radius: 5vh;
+  width: 380px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  max-height: 700px;
+}
+
+/* Фото директора */
+.director-photo {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+}
+
+.director-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--purple-light);
+  cursor: pointer;
+}
+
+/* Текстовые стили */
+.heade {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: var(--purple-dark);
+  text-align: center;
+  font-family: "TTNorms-bold";
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: var(--purple-dark);
+}
+
+.text {
+  font-size: 16px;
+  margin-top: 5px;
+  color: var(--purple-dark);
+}
+
+.text a {
+  color: var(--purple-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+@media (hover: hover) {
+.text a:hover {
+  text-decoration: underline;
+}
+}
+
+@media (hover: hover) {
+.director-photo img:hover {
+    transform: scale(1.2);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Адаптивность */
+@media (max-width: 768px) { 
+
+    /* Контактная информация */
+.help {
+    padding-top: 50px;
+}
+
+.help h1 {
+    font-family: "TTNorms-bold";
+    color: var(--purple-dark);
+    font-size: 26px;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.help h2 {
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+
+/* Центрируем основной блок */
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Контейнер с картой и контактами */
+.map-wrapper {
+  position: relative;
+  width: 100%;          /* 70% ширины экрана */
+  height: 700px;        /* Фиксированная высота */
+  border-radius: 0vh;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  position: static; /* Отменяем абсолютное позиционирование вложенных элементов */
+    display: flex;
+    flex-direction: column; /* Элементы идут друг под другом */
+    height: auto; /* Убираем фиксированную высоту */
+    
+}
+
+/* Карта iframe */
+#map {
+    display: flex;
+    height: 300px; /* Примерная высота карты */
+    order: 2; /* Карта после контактного блока */
+    width: 100% !important;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* Контактный блок поверх карты */
+.contact-box {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: var(--light);
+  padding: 30px;
+  border-radius: 0vh;
+  width: auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  max-height: 700px;
+  position: static; /* Отменяем абсолют */
+    max-height: none; /* Чтобы не было ограничений */
+    z-index: auto;
+    order: 1; /* Контактный блок первый */
+}
+
+/* Фото директора */
+.director-photo {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+}
+
+.director-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--purple-light);
+  cursor: pointer;
+}
+
+/* Текстовые стили */
+.heade {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: var(--purple-dark);
+  text-align: center;
+  font-family: "TTNorms-bold";
+  white-space: pre;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: var(--purple-dark);
+}
+
+.text {
+  font-size: 16px;
+  margin-top: 5px;
+  color: var(--purple-dark);
+}
+
+.text a {
+  color: var(--purple-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (hover: hover) {
+.text a:hover {
+  text-decoration: underline;
+}
+}
+
+@media (hover: hover) {
+.director-photo img:hover {
+    transform: scale(1.2);
+}
+}
+
 }

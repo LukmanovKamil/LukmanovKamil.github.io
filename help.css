@@ -1,6 +1,6 @@
 /* Популярные вопросы */
 .help {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 .help h1 {
@@ -9,6 +9,7 @@
     font-size: 36px;
     text-align: center;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 .help h2 {
@@ -19,32 +20,50 @@
 }
 
 .help a {
-    color: var(--purple-dark);
-    text-decoration: underline;
+    color: var(--purple-light);
+    
     font-weight: bold;
     font-size: 32px;
 }
 
+@media (hover: hover) {
+.help a:hover{
+    text-decoration: underline;
+}
+}
+
+
+
+
+
+/* Фотография Влада */
 .vlad {
-    padding-top: 100px;
+    padding-top: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
-
-.vlad a{
+.vlad a {
     width: 70%;
+    
 }
 
-.vlad img{
+.vlad img {
     width: 100%;
     height: auto;
     border-radius: 5vh;
     pointer-events: none;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
 }
 
-hr{
+
+
+
+
+/* Линия */
+hr {
     margin: 100px auto 0;
     border: none;
     border-top: 3px solid var(--purple-dark);
@@ -54,12 +73,16 @@ hr{
 
 
 
+
+
+/* Аккардион */
 .container {
   margin: auto;
   padding: 100px 0;
   width: 70%;
   height: auto;
 }
+
 .accordion h1 {
     display: flex;
     flex-direction: column;
@@ -81,22 +104,12 @@ hr{
 }
 }
 
-.accordion .content {
-    max-height: 0;
-    border-bottom: 2px solid var(--purple-light);
-    border-radius: 30px;
-    transition: all 0.2s ease ;
-}
-
 .accordion .content.activ {
     padding: 20px 0;
     max-height: 100%;
+    transform: scaleY(1);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
-
-.accordion-header.activ {
-    color: var(--purple-light);
-}
-
 
 .accordion .content {
     transform: scaleY(0);
@@ -104,72 +117,256 @@ hr{
     overflow: hidden;
 }
 
-.accordion .content.activ {
-    transform: scaleY(1);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+.accordion-name.activ {
+    color: var(--purple-light);
 }
 
+.content {
+    max-height: 0;
+    border-bottom: 2px solid var(--purple-light);
+    border-radius: 30px;
+    transition: all 0.2s ease ;
+}
 
-
-
-
-
-.zag p{
+.content p {
     color: var(--purple-dark);
     text-align: center;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: normal;
     margin: 0 0 30px 0;
 }
 
-.zag u{
-    color: var(--purple-dark);
-    text-decoration: underline;
-    font-size: 28px;
+.content u {
+    color: var(--purple-light);
+    
+    font-size: 30px;
     font-weight: bold;
 }
 
-
-
-
-.text {
-    text-align: center;
-}
-
-
-.text p {
+.content b {
     color: var(--purple-dark);
-    font-size: 22px;
-    padding: 5px;
-} 
-
-.text u{
-    color: var(--purple-dark);
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 26px;
-}
-
-.text b{
-    color: var(--purple-dark);
-    font-size: 24px;
-}
-
-.text a{
-    color: var(--purple-dark);
+    font-size: 30px;
 }
 
 @media (hover: hover) {
-.text u:hover,a:hover{
+.content u:hover{
+    
+    text-decoration: underline;
+}
+}
+
+
+
+
+
+/* Цена  */
+.price {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: stretch; /* Делаем все блоки одинаковой высоты */
+}
+
+.pr {
+    flex: 1 1 200px; /* Позволить блоку расти */
+    margin: 10px; /* На всякий случай отступы между блоками */
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем по горизонтали */
+}
+
+.foto {
+    display: flex; /* Используем flex для центрирования */
+    justify-content: center; /* Центрируем горизонтально */
+    align-items: center; /* Центрируем вертикально */
+    margin-bottom: 10px; /* Отступы снизу */
+}
+
+.foto img {
+    width: 200px; /* Увеличиваем размер изображения */
+    height: 200px; /* Устанавливаем высоту для пропорционального отображения */
+    border-radius: 50%; /* Округляем изображение */
+    pointer-events: none;
+}
+
+.st p {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0 0 0px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+
+/* Популярные вопросы */
+.help {
+    padding-top: 50px;
+}
+
+.help h1 {
+    font-family: "TTNorms-bold";
+    color: var(--purple-dark);
+    font-size: 26px;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.help h2 {
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.help a {
+    color: var(--purple-light);
+    
+    font-weight: bold;
+    font-size: 24px;
+}
+
+@media (hover: hover) {
+.help a:hover{
+    text-decoration: underline;
+}
+}
+
+
+
+
+
+/* Фотография Влада */
+.vlad {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vlad a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.vlad img {
+    width: 100%;
+    height: auto;
+    border-radius: 0vh;
+    pointer-events: none;
+}
+
+
+
+
+
+/* Линия */
+hr {
+    margin: 50px auto 0;
+    border: none;
+    border-top: 3px solid var(--purple-dark);
+    width: 70%;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* Аккардион */
+.container {
+  margin: auto;
+  padding: 50px 0;
+  width: 90%;
+  height: auto;
+}
+
+.accordion h1 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    color: var(--purple-dark);
+    font-size: 26px;
+    border-bottom: 1px solid var(--purple-dark);
+    font-family: "TTNorms-bold";
+    text-align: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+@media (hover: hover) {
+.accordion h1:hover,
+.accordion h1:hover::after {
+    cursor: pointer;
     color: var(--purple-light);
 }
 }
 
+.accordion .content.activ {
+    padding: 20px 0;
+    max-height: 100%;
+    transform: scaleY(1);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.accordion .content {
+    transform: scaleY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+}
+
+.accordion-name.activ {
+    color: var(--purple-light);
+}
+
+.content {
+    max-height: 0;
+    border-bottom: 2px solid var(--purple-light);
+    border-radius: 30px;
+    transition: all 0.2s ease ;
+}
+
+.content p {
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0 0 30px 0;
+}
+
+.content u {
+    color: var(--purple-light);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.content b {
+    color: var(--purple-dark);
+    font-size: 22px;
+}
+
+@media (hover: hover) {
+.content u:hover{
+    
+    text-decoration: underline;
+}
+}
 
 
 
 
 
+/* Цена  */
 .price {
     display: flex;
     justify-content: space-evenly;
@@ -200,212 +397,9 @@ hr{
 }
 
 .st p {
-    color: var(--purple-dark);
     font-size: 20px;
     font-style: italic;
-    text-align: center; /* Центрируем текст */
+    margin: 0 0 0px 0;
 }
-
-
-
-
-@media (max-width: 768px) {
-
-/* Популярные вопросы */
-.help {
-    padding-top: 30px;
-}
-
-.help h1 {
-    font-family: "TTNorms-bold";
-    color: var(--purple-dark);
-    font-size: 25px;
-    text-align: center;
-    font-weight: normal;
-}
-
-.help h2 {
-    color: var(--purple-dark);
-    text-align: center;
-    font-size: 20px;
-    font-weight: normal;
-}
-
-.help a {
-    color: var(--purple-dark);
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 26px;
-}
-
-.vlad {
-    padding-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.vlad a{
-    width: 100%;
-}
-
-.vlad img{
-    width: 100%;
-    height: auto;
-    border-radius: 0vh;
-    pointer-events: none;
-}
-
-hr{
-    margin: 30px auto 0;
-    border: none;
-    border-top: 3px solid var(--purple-dark);
-    width: 70%;
-    border-radius: 50%;
-}
-
-
-.container {
-  margin: auto;
-  padding: 20px 0;
-  width: 90%;
-  height: auto;
-}
-.accordion h1 {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    color: var(--purple-dark);
-    font-size: 24px;
-    border-bottom: 1px solid var(--purple-dark);
-    font-family: "TTNorms-bold";
-    text-align: center;
-    cursor: pointer;
-    font-weight: normal;
-}
-
-.accordion .content {
-    max-height: 0;
-    border-bottom: 2px solid var(--purple-light);
-    border-radius: 30px;
-    transition: all 0.2s ease ;
-}
-
-.accordion .content.activ {
-    padding: 20px 0;
-    max-height: 100%;
-}
-
-.accordion-header.activ {
-    color: var(--purple-light);
-}
-
-
-.accordion .content {
-    transform: scaleY(0);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    overflow: hidden;
-}
-
-.accordion .content.activ {
-    transform: scaleY(1);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-
-
-
-
-
-.zag p{
-    color: var(--purple-dark);
-    text-align: center;
-    font-size: 20px;
-    font-weight: normal;
-    margin: 0 0 30px 0;
-}
-
-.zag u{
-    color: var(--purple-dark);
-    text-decoration: underline;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-
-
-
-.text {
-    text-align: center;
-}
-
-
-.text p {
-    color: var(--purple-dark);
-    font-size: 18px;
-    padding: 5px;
-} 
-
-.text u{
-    color: var(--purple-dark);
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.text b{
-    color: var(--purple-dark);
-    font-size: 20px;
-}
-
-.text a{
-    color: var(--purple-dark);
-}
-
-
-
-
-
-
-
-.price {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: stretch; /* Делаем все блоки одинаковой высоты */
-}
-
-.pr {
-    flex: 1 1 100px; /* Позволить блоку расти */
-    margin: 10px; /* На всякий случай отступы между блоками */
-    display: flex;
-    flex-direction: column; /* Вертикальное расположение содержимого */
-    align-items: center; /* Центрируем по горизонтали */
-}
-
-.foto {
-    display: flex; /* Используем flex для центрирования */
-    justify-content: center; /* Центрируем горизонтально */
-    align-items: center; /* Центрируем вертикально */
-    margin-bottom: 5px; /* Отступы снизу */
-}
-
-.foto img {
-    width: 80px; /* Увеличиваем размер изображения */
-    height: 80px; /* Устанавливаем высоту для пропорционального отображения */
-    border-radius: 50%; /* Округляем изображение */
-    pointer-events: none;
-}
-
-.st p {
-    color: var(--purple-dark);
-    font-size: 20px;
-    font-style: italic;
-    text-align: center; /* Центрируем текст */
-}
-
-
-
 
 }

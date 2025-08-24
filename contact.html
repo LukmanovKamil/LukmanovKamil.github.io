@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/contact.css">
-    <link rel="stylesheet" href="/footer.css">
+    <meta name="theme-color" content="#9526c0">
 </head>
 
 <body>
@@ -19,8 +19,8 @@
             <div class="logo">
                 <a href="/"><img src="/img/logo.png" alt=""></a>
                 <div class="name">
-                <p><a class="name1" href="/">FREE MOTION</a></p>
-                <p><a class="name2" href="/">Это ты.</a></p>
+                    <p><a class="name1" href="/">FREE MOTION</a></p>
+                    <p><a class="name2" href="/">Это ты.</a></p>
                 </div>
             </div>
             <nav class="nav">
@@ -30,29 +30,84 @@
                 <a href="/contact.html" class="active">КОНТАКТЫ</a>
             </nav>
         </div>
+
+        <div class="header-mobile">
+            <div class="logo-mobile">
+                <a href="/"><img src="/img/logo.png" alt=""></a>
+            </div>
+            <div class="nav-mobile">
+                <div class="name-mobile">
+                    <p><a class="name1-mobile" href="/">FREE MOTION</a></p>
+                    <p><a class="name2-mobile" href="/">Это ты.</a></p>
+                </div>
+                <div class="icons">
+                    <a href="/directions.html" title="Направления"><img src="/img/index/nap.png" alt="Направления" data-active="/img/index/nap-header.png"></a>
+                    <a href="/help.html" title="Помощь"><img src="/img/index/vop.png" alt="Помощь" data-active="/img/index/vop-header.png"></a>
+                    <a href="/contact.html" class="active" title="Контакты"><img src="/img/index/map.png" alt="Контакты" data-active="/img/index/map-header.png"></a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
-        <div class="main">
-            <iframe class="map" src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=61.620963%2C55.104566&mode=poi&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D232378158036&source=mapframe&utm_source=mapframe&z=16.6"></iframe>           
-        </div>
-    </main>
+    <div class="help">
+        <h1>Контактная информация</h1>
+        <h2>карта и контакты нашей школы</h2>
+    </div>
+    <div class="contact-section">
+        <div class="map-wrapper">
+            <div id="map"></div>
+            <div class="contact-box">
+                <!-- Заголовок -->
+                <div class="heade">Школа танцев 
+"FREE MOTION"</div>
 
-    <footer>
-        <div class="footer">
-            <div class="name"> 
-                <p><a class="name1" href="/">FREE MOTION</a></p>
-                <p><a class="name2" href="/">Школа танцев</a></p>
-            </div>
-            <div class="dir">
-                <p>Контакт директора:</p>
-                <p><a class="contact2" href="tel:+79518148514">+7 (951) 814-85-14</a></p>
+                <!-- Адрес -->
+                <div class="section-title">Адрес:</div>
+                <div class="text">г. Копейск, ул. проспект Ильича, д. 3</div>
+
+                <!-- Как пройти -->
+                <div class="section-title">Как пройти:</div>
+                <div class="text">Вход со двора, а на втором этаже поверни налево.</div>
+
+                <!-- Фото директора (круглое) -->
+                <div class="director-photo">
+                    <a href="https://vk.com/pryahinvlad" target="_blank" rel="noopener noreferrer">
+                        <img src="/img/contacts/vlad.jpg" alt="Фото директора">
+                    </a>
+                </div>
+
+                <!-- Имя директора -->
+                <div class="section-title">Директор:</div>
+                <div class="text">
+                    <a href="https://vk.com/pryahinvlad">Пряхин Владислав</a>
+                </div>
+
+                <!-- Контакты -->
+                <div class="section-title">Контакты:</div>
+                <div class="text">
+                    Телефон: <a href="tel:+79518148514">+7 (951) 814-85-14</a>
+                </div>
+
+                <!-- Способ связи -->
+                <div class="section-title">Связь:</div>
+                <div class="text">
+                    Можно позвонить или написать в мессенджерах (WhatsApp, Telegram)
+                </div>
+
+                <!-- Группа ВКонтакте -->
+                <div class="section-title">Мы в ВКонтакте:</div>
+                <div class="text">
+                    <a href="https://vk.com/examplegroup" target="_blank" rel="noopener noreferrer">vk.com/freemotion</a>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</main>
 
     <a id="top" href="#"><img src="/img/top.png" alt=""></a>
 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/main.js"></script>
 

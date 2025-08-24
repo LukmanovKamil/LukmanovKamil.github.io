@@ -1,48 +1,43 @@
 // Переключиние кнопки актив в педагогах
-$(document).ready(function () {
-    var header = document.getElementById("nap");
-    var btns = header.getElementsByClassName("foto");
-    for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("activ");
-    current[0].className = current[0].className.replace(" activ", "");
-    this.className += " activ";
-    });
-}})
+$(document).ready(function() {
+    // Обработчик клика на элемент с классом .foto
+    $('.foto').click(function(e) {
+        e.preventDefault(); // Отменяем стандартное поведение ссылки
 
+        // Убираем класс активности со всех фото и прячем всех педагогов
+        $('.foto').removeClass('activ');
+        $('.pd').hide();
 
+        // Добавляем класс активности к кликнутому фото
+        $(this).addClass('activ');
 
+        // Получаем id педагога из атрибута href ссылки внутри фото (убираем #)
+        let targetId = $(this).find('a.ft').attr('href').substring(1);
 
+        // Показываем блок педагога с классом, соответствующим targetId
+        $('.' + targetId).show();
 
+        // Скроллим страницу к блоку педагога при клике
+        // Без анимации, сразу перескакиваем
+        $('html, body').scrollTop($('.' + targetId).offset().top);
+    });
 
-// Блок с переключением информации о педегогах
-$(document).ready(function () {
-$(".cc,.rr,.gg,.nn,.ll").hide();
-    $(".k").click(function () {
-        $(".cc,.rr,.gg,.nn,.ll").hide();
-        $(".kk").show()
-    });
-    $(".c").click(function () {
-        $(".kk,.rr,.gg,.nn,.ll").hide();
-        $(".cc").show()
-    });
-    $(".r").click(function () {
-        $(".kk,.cc,.rr,.nn,.ll").hide();
-        $(".rr").show()
-    });
-    $(".g").click(function () {
-        $(".kk,.cc,.rr,.nn,.ll").hide();
-        $(".gg").show()
-    });
-    $(".n").click(function () {
-        $(".kk,.cc,.rr,.gg,.ll").hide();
-        $(".nn").show()
-    });
-    $(".l").click(function () {
-        $(".kk,.cc,.rr,.gg,.nn").hide();
-        $(".ll").show()
-    });
+    // При загрузке страницы:
+    // Находим первое фото с классом 'activ'
+    let firstActive = $('.foto.activ');
+    if (firstActive.length) {
+        // Получаем targetId для этого фото
+        let targetId = firstActive.find('a.ft').attr('href').substring(1);
+
+        // Прячем всех педагогов
+        $('.pd').hide();
+
+        // Показываем педагога, соответствующего активному фото
+        // При загрузке скролл не делаем, чтобы страница не прыгала
+        $('.' + targetId).show();
+    }
 });
+
 
 
 // Слайдер
@@ -83,26 +78,64 @@ $(document).ready(function () {
     });
 
 
-// Загрузка заголовка и подвала...
-$("#header").load("header.html");
-$("#footer").load("footer.html");
-
 
 
 
 // Якорь
-window.addEventListener('scroll', function() {
-    const topButton = document.getElementById('top');
-    
-    // Установите значение для точки, после которой появляется кнопка
-    const scrollThreshold = 800; // Например, 300 пикселей
+const topButton = document.getElementById('top');
+const footer = document.querySelector('footer');
 
+if (footer && topButton) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const isMobile = window.innerWidth <= 767;
+
+            if (entry.isIntersecting) {
+                if (isMobile) {
+                    topButton.style.display = 'none'; // Прячем кнопку на телефоне
+                } else {
+                    topButton.classList.add('in-footer'); // Меняем цвет на десктопе
+                }
+            } else {
+                if (isMobile) {
+                    // Но только если прокрутка больше порога
+                    if (window.scrollY > 800) {
+                        topButton.style.display = 'block';
+                    }
+                } else {
+                    topButton.classList.remove('in-footer');
+                }
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1
+    });
+
+    observer.observe(footer);
+}
+
+// Отдельная логика появления кнопки при скролле
+window.addEventListener('scroll', function () {
+    const scrollThreshold = 800;
+    const isMobile = window.innerWidth <= 767;
+
+    // Если футер не в зоне видимости и скролл больше порога — показываем
     if (window.scrollY > scrollThreshold) {
-        topButton.style.display = 'block'; // Показать кнопку
+        // Только если футер не виден (проверим вручную)
+        const footerRect = footer?.getBoundingClientRect();
+        const footerVisible = footerRect && footerRect.top < window.innerHeight;
+
+        if (!isMobile || !footerVisible) {
+            topButton.style.display = 'block';
+        }
     } else {
-        topButton.style.display = 'none'; // Скрыть кнопку
+        topButton.style.display = 'none';
     }
-});
+}, { passive: true });
+
+
+
 
 
 
@@ -169,7 +202,6 @@ videoContainers.forEach(container => {
     }
 }
 
-
     stopBtn.addEventListener('click', stopVideo);
 
     function updateProgress() {
@@ -205,20 +237,139 @@ videoContainers.forEach(container => {
 
 
 
-const items = document.querySelectorAll(".accordion-header");
 
-// Функция для активации вкладки
+
+// Аккордеон
+// Находим все заголовки аккордеона по классу .accordion-name
+const items = document.querySelectorAll(".accordion-name");
+
+// Функция переключения аккордеона при клике
 function toggleAccordion() {
-    // Убираем активное состояние у всех элементов
+    // Сначала убираем активные классы у всех заголовков и их контента
     items.forEach(item => {
-        item.classList.remove('activ');
-        item.nextElementSibling.classList.remove('activ');
+        item.classList.remove('activ');             // Убираем подсветку заголовка
+        item.nextElementSibling.classList.remove('activ');  // Скрываем контент (следующий за заголовком элемент)
     });
 
-    // Устанавливаем активное состояние только на текущем элементе
+    // Добавляем активные классы к тому заголовку, на который кликнули, и его контенту
     this.classList.add('activ');
     this.nextElementSibling.classList.add('activ');
+
+    // Задержка перед скроллом нужна, чтобы анимация раскрытия контента успела сработать
+    setTimeout(() => {
+        // Плавно скроллим страницу так, чтобы выбранный заголовок оказался вверху окна
+        this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);  // Время задержки в миллисекундах (можно подкорректировать)
 }
 
-// Добавляем слушатель событий на все элементы аккордеона
+// Назначаем обработчик клика для каждого заголовка аккордеона
 items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+
+
+
+
+
+
+
+
+document.querySelectorAll('.block').forEach(block => {
+    const img = block.querySelector('.zag img');
+    const originalSrc = img.getAttribute('src');
+    const hoverSrc = img.dataset.hover;
+
+    if (hoverSrc) {
+        block.addEventListener('mouseenter', () => {
+            img.setAttribute('src', hoverSrc);
+        });
+
+        block.addEventListener('mouseleave', () => {
+            img.setAttribute('src', originalSrc);
+        });
+    }
+});
+
+
+
+
+
+// переключение актив на мобильной шапке
+  document.querySelectorAll('.nav-mobile .icons a').forEach(link => {
+    const img = link.querySelector('img');
+    const activeSrc = img.dataset.active;
+    const defaultSrc = img.getAttribute('src');
+
+    if (link.classList.contains('active') && activeSrc) {
+      img.setAttribute('src', activeSrc);
+    } else {
+      img.setAttribute('src', defaultSrc);
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+ymaps.ready(init);
+
+let map, placemark;
+
+function isMobile() {
+  return window.innerWidth < 768;
+}
+
+function getCenterCoords() {
+  return isMobile() ? [55.106800, 61.619700] : [55.107000, 61.621500];
+}
+
+function getPlacemarkCoords() {
+  return isMobile() ? [55.106900, 61.619400] : [55.106920, 61.619370];
+}
+
+function getZoomLevel() {
+  return isMobile() ? 16 : 17; // Зум 16 для мобильных, 17 для десктопа
+}
+
+function init() {
+  map = new ymaps.Map('map', {
+    center: getCenterCoords(),
+    zoom: getZoomLevel(),
+    controls: ['zoomControl', 'fullscreenControl']
+  });
+
+  placemark = new ymaps.Placemark(
+    getPlacemarkCoords(),
+    {},
+    {
+      balloonVisible: false,
+      openBalloonOnClick: false,
+      hasHint: false,
+      iconLayout: 'default#image',
+      iconImageHref: '/img/contacts/map.png',
+      iconImageSize: [60, 60],
+      iconImageOffset: [-20, -40]
+    }
+  );
+
+  map.geoObjects.add(placemark);
+}
+
+// При изменении размера — пересчитываем центр, метку и ЗУМ
+window.addEventListener('resize', function () {
+  if (map && placemark) {
+    const newCenter = getCenterCoords();
+    const newPlacemarkCoords = getPlacemarkCoords();
+    const newZoom = getZoomLevel();
+
+    map.setCenter(newCenter);
+    placemark.geometry.setCoordinates(newPlacemarkCoords);
+    map.setZoom(newZoom);
+  }
+});
+
+

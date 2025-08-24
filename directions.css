@@ -1,21 +1,21 @@
 /* Выбор направления */
 .vb {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 .vb h1 {
     font-family: "TTNorms-bold";
-   font-weight: normal;
-    color: #481550;
-    font-size: 40px;
+    color: var(--purple-dark);
+    font-size: 36px;
     text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 .vb h2 {
-    color: #481550;
+    color: var(--purple-dark);
     text-align: center;
     font-size: 30px;
-    font-style: italic;
     font-weight: normal;
 }
 
@@ -30,11 +30,11 @@
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-    margin: 100px 0;
+    margin: 70px 0;
 }
 
 .np {
-  margin: 25px 0;
+  margin: 0 0 25px 0;
   cursor: text;
 }
 
@@ -45,19 +45,20 @@
 
 .foto img {
     width: 250px;
-    pointer-events: none
+    pointer-events: none;
 }
 
 .activ {
-    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
+    background-image: var(--gradient);
     transition: all 250ms ease;
     position: relative;
     transform: scale(1.0)
+    
 }
 
 @media (hover: hover) {
 .foto:hover {
-    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
+    background-image: var(--gradient);
     transition: all 250ms ease;
     position: relative;
     transform: scale(1.1)
@@ -71,25 +72,32 @@
 
 @media (hover: hover) {
 .ft:hover {
-    transition: all 50ms ease;
+    transition: all 250ms ease;
     margin-top: -6px;
     margin-left: -257px;
 }
 }
 
-.np p {
-    font-size: 20px;
-    text-align: center;
-    color: #481550;
-}
-
-.np p b {
-    font-size: 25px;
-    color: #481550;
-}
-
 .zag {   
     padding-top: 10px;
+}
+
+.zag p {
+    font-size: 18px;
+    text-align: center;
+    color: var(--purple-dark);
+}
+
+.zag b {
+    font-size: 20px;
+    color: var(--purple-light);
+    
+}
+
+@media (hover: hover) {
+.zag b:hover {
+    text-decoration: underline;
+}
 }
 
 
@@ -110,30 +118,40 @@
 }
 
 .b b{
-    color: #481550;
+    color: var(--purple-light);
     font-size: 22px;
+}
+
+@media (hover: hover) {
+.b b:hover {
     text-decoration: underline;
 }
+} 
 
 .pdg {
     border-radius: 5vh;
     pointer-events: none;
     width: 70%;
     margin: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
 }
-
-
 
 .ped h1 {
     padding: 20px 0 0 0; 
-    color: #481550;
+    color: var(--purple-light);
     font-family: "TTNorms-bold";
     font-size: 55px;
     text-align: center;
 }   
 
+@media (hover: hover) {
+.ped h1:hover {
+    text-decoration: underline;
+}
+} 
+
 .ped h2 {
-    color: #481550;
+    color: var(--purple-dark);
     font-size: 30px;
     font-style: italic;
     font-weight: normal;
@@ -149,20 +167,149 @@
 
 .p p {
     text-align: center;
-    color: #481550;
+    color: var(--purple-dark);
     font-size: 30px;    
     padding: 20px 0; 
 }
 
 .p b {
-    color: #481550;
+    color: var(--purple-dark);
 }
 
 .p u {
-    color: #481550;
-    text-decoration: underline;
+    color: var(--purple-light);
+    
     font-weight: bold;
     font-size: 35px;
+}
+
+@media (hover: hover) {
+.p u:hover {
+    text-decoration: underline;
+}
+} 
+
+
+
+
+
+/* Плеер */
+.video-container {
+  display: block;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    max-width: 70%;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.video-container img {
+    height: 40px;
+    width: 40px;
+}
+
+.play_btn:hover {
+    position: relative;
+    transform: scale(1.1)
+}
+
+.controls_stop:hover {
+    position: relative;
+    transform: scale(1.1)
+}
+
+.video {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 5vh 5vh 0 0;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+.controls {
+    background: var(--gray-dark);
+    border-radius: 0 0 5vh 5vh;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    margin-top: -5px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+.controls_stop {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.controls_play {
+    cursor: pointer;
+}
+
+.controls_progress {
+    display: flex;
+    width: 100%;
+    margin: 0 0px 0 20px;
+}
+
+.controls_time {
+    margin-left: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--light);
+}
+
+.overlay img {
+    width: 90px; /* Устанавливаем ширину изображения, изменить по необходимости */
+    height: auto; /* Автоматическое изменение высоты согласно пропорциям */
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.play-overlay {
+    position: absolute; /* Позволяет накладывать изображение поверх видео */
+    top: 50%; /* Ставим верхний край на 50% от высоты контейнера */
+    left: 50%; /* Ставим левый край на 50% от ширины контейнера */
+    transform: translate(-50%, -50%); /* Сдвигаем изображение обратно на 50% по высоте и ширине */
+    cursor: pointer; /* Указывает, что элемент кликабелен */
+    width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
+    height: auto; /* Автоматическое изменение высоты согласно пропорциям */
+    z-index: 10; /* Убедитесь, что изображение выше, чем видео (если необходимо) */
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+ 
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: var(--light);
+    border-radius: 5px;
+    width: 10px;
+    height: 30px;
+    margin-top: -10px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: var(--grey-light);
+    border-radius: 5px;
 }
 
 
@@ -175,9 +322,10 @@
     max-width: 70%;
     overflow: hidden;
     position: relative;
-    margin: 40px auto;
+    margin: 10px auto;
     text-align: center;
     border-radius: 5vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
 }
 
 .slides {
@@ -212,7 +360,7 @@
 
 @media (hover: hover) {
 .prev:hover, .next:hover {
-    background: #2c2c2c;
+    background: var(--gray-dark);
 }
 }
 
@@ -238,6 +386,231 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+
+/* Выбор направления */
+.vb {
+    padding-top: 50px;
+}
+
+.vb h1 {
+    font-family: "TTNorms-bold";
+    color: var(--purple-dark);
+    font-size: 26px;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.vb h2 {
+    color: var(--purple-dark);
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+
+
+
+
+/* Направления */
+.nap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0;
+}
+
+.np {
+    margin: 0 0 10px 0;
+    cursor: text;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 90%;
+}
+
+.foto {
+    border-radius: 100%;  
+    cursor: pointer;
+}
+
+.foto img {
+    width: 150px;
+    pointer-events: none;
+    display: block;
+}
+
+.activ {
+    background-image: var(--gradient);
+    transition: all 250ms ease;
+    position: relative;
+    transform: scale(1.0)
+}
+
+@media (hover: hover) {
+.foto:hover {
+    background-image: var(--gradient);
+    transition: all 250ms ease;
+    position: relative;
+    transform: scale(1.1)
+}
+}
+.ft {
+    position:absolute;
+    margin-top: -150px;
+    margin-left: 1px;
+}
+
+@media (hover: hover) {
+.ft:hover {
+    transition: all 50ms ease;
+    margin-top: -6px;
+    margin-left: -257px;
+}
+}
+
+.zag {   
+    padding-top: 10px;
+    width: 250px;
+}
+
+.zag p {
+    font-size: 20px;
+    text-align: center;
+    color: var(--purple-dark);
+}
+
+.zag b {
+    font-size: 16px;
+    color: var(--purple-light);
+    white-space: nowrap;
+}
+
+@media (hover: hover) {
+.zag b:hover {
+    text-decoration: underline;
+}
+}
+
+
+
+
+
+/* Педагоги */
+.ped {
+    display: flex;
+    justify-content: center;
+}
+
+.pd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.b b{
+    color: var(--purple-light);
+    font-size: 18px;
+}
+
+@media (hover: hover) {
+.b b:hover {
+    text-decoration: underline;
+}
+} 
+
+.pdg {
+    border-radius: 0vh;
+    pointer-events: none;
+    width: 100%;
+    margin: 25px;
+}
+
+.ped h1 {
+    padding: 20px 0 0 0; 
+    color: var(--purple-light);
+    font-family: "TTNorms-bold";
+    font-size: 26px;
+    text-align: center;
+}   
+
+@media (hover: hover) {
+.ped h1:hover {
+    text-decoration: underline;
+}
+} 
+
+.ped h2 {
+    color: var(--purple-dark);
+    font-size: 22px;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+
+.p {
+    text-align: center;
+    padding: 20px 0; 
+    width: 90%;
+    margin: 0 auto;
+}
+
+.p p {
+    text-align: center;
+    color: var(--purple-dark);
+    font-size: 22px;    
+    padding: 20px 0; 
+}
+
+.p b {
+    color: var(--purple-dark);
+}
+
+.p u {
+    color: var(--purple-light);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+@media (hover: hover) {
+.p u:hover {
+    text-decoration: underline;
+}
+} 
+
+
+
+
+
 /* Плеер */
 .video-container {
   display: block;
@@ -245,7 +618,7 @@
     width: 100%;
     height: auto;
     margin: 10px auto;
-    max-width: 70%;
+    max-width: 100%;
     position: relative;
     display: inline-block;
 }
@@ -268,32 +641,35 @@
 .video {
     max-width: 100%;
     width: 100%;
-    border-radius: 5vh 5vh 0 0;
+    border-radius: 0vh 0vh 0 0;
     cursor: pointer;
 }
 
 .controls {
-    background: #2c2c2c;
-    border-radius: 0 0 5vh 5vh;
+    background: var(--gray-dark);
+    border-radius: 0 0 0vh 0vh;
     display: flex;
     align-items: center;
-    padding: 20px 40px;
+    padding: 0px 0px;
     margin-top: -5px;
 }
 
 .controls_stop {
     margin-left: 20px;
     cursor: pointer;
+    display: none;
 }
 
 .controls_play {
     cursor: pointer;
+    display: none;
 }
 
 .controls_progress {
     display: flex;
     width: 100%;
     margin: 0 0px 0 20px;
+    display: none;
 }
 
 .controls_time {
@@ -302,11 +678,11 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
-    color: #f7fcfc;
+    color: var(--light);
 }
 
 .overlay img {
-    width: 90px; /* Устанавливаем ширину изображения, изменить по необходимости */
+    width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
     height: auto; /* Автоматическое изменение высоты согласно пропорциям */
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
@@ -320,8 +696,6 @@
     width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
     height: auto; /* Автоматическое изменение высоты согласно пропорциям */
     z-index: 10; /* Убедитесь, что изображение выше, чем видео (если необходимо) */
-   
-   
 }
 
 input[type='range'] {
@@ -341,7 +715,7 @@ input[type=range]:focus {
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: #f7fcfc;
+    background: var(--light);
     border-radius: 5px;
     width: 10px;
     height: 30px;
@@ -352,7 +726,7 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
     cursor: pointer;
-    background: #9f9f9f;
+    background: var(--grey-light);
     border-radius: 5px;
 }
 
@@ -360,121 +734,67 @@ input[type=range]::-webkit-slider-runnable-track {
 
 
 
-
-
-
-
-
-@media (max-width: 768px) {
-/* Выбор направления */
-.vb {
-    padding-top: 30px;
-}
-
-.vb h1 {
-    font-size: 25px;
-}
-
-.vb h2 {
-    font-size: 20px;
-}
-/* Направления */
-.nap {
-    margin: 20px 0;
-}
-
-.np {
-    margin: 25px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.foto img {
-    width: 150px;
-}
-
-.ft {
-    margin-left: -150px;
-}
-
-.np p {
-    font-size: 16px;
-    padding-top: 0px;
-}
-
-.np p b {
-    font-size: 22px;
-    color: #481550;
-}
-/* Педагоги */
-.pdg {
-    border-radius: 0vh;
-    width: 100%;
-    margin: 0px;
-}
-
-.ped h1 {
-    padding: 20px 0 0 0; 
-    font-size: 24px;
-}   
-
-.ped h2 {
-    font-size: 20px;
-}
-
-.b b{
-    font-size: 16px;
-} 
-
-.p {
-    padding: 20px 0; 
-    width: 90%;
-}
-
-.p p {
-    font-size: 18px;    
-    padding: 10px 0; 
-}
-
-.p b {
-    font-size: 20px;
-}
-
-.p u {
-    font-size: 24px;
-}
 /* Слайдер */
 .slider {
+    width: 100%;
     max-width: 100%;
+    overflow: hidden;
+    position: relative;
     margin: 10px auto;
+    text-align: center;
     border-radius: 0vh;
 }
 
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    pointer-events: none;
+}
 
-
-
-/* Плеер */
-.video-container {
+.slide {
+    flex-shrink: 0;
     width: 100%;
-    max-width: 100%;
+    position: relative;
 }
 
-.video {
-    border-radius: 0vh 0vh 0 0;
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.controls {
-    border-radius: 0 0 0vh 0vh;
-    padding: 0px 0px;
-    
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(223, 9, 194, 0.0);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 100%;
 }
 
-.controls_play,.controls_stop,.controls_progress {
-    display: none
+@media (hover: hover) {
+.prev:hover, .next:hover {
+    background: var(--gray-dark);
+}
 }
 
-.overlay img {
-    width: 50px; /* Устанавливаем ширину изображения, изменить по необходимости */
+.prev {
+    left: 10px;
 }
+
+.prev img{
+    height: 30px;
+}
+
+.next {
+    right: 10px;
+}
+
+.next img{
+    height: 30px;
+}
+
 }

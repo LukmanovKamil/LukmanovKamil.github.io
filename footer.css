@@ -1,7 +1,7 @@
 footer {
-    background-image: linear-gradient(10deg,#5a205a 0%, #9526c0 100%);
+    background-image: var(--gradient);
     display: flex;
-    height: 120px;
+    height: 100px;
 }
 
 footer .footer{
@@ -37,7 +37,6 @@ footer .dir {
     margin: 0 15px;
 }
 
-
 footer .dir p {
     font-size: 15px;
 }
@@ -46,32 +45,27 @@ footer .dir p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Адаптивность */
 @media (max-width: 768px) {
 
 footer {
+    background-image: var(--gradient);
+    display: flex;
     height: 100px;
 }
 
 footer .footer{
+    display: flex;
+    margin: auto;
     width: 90%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
 footer .name {
+    display: flex;
+    flex-direction: column;
     margin: 0 20px 0 0;
 }
 
@@ -92,7 +86,6 @@ footer .dir {
     align-items: flex-end;
     margin: 0 15px;
 }
-
 
 footer .dir p {
     font-size: 15px;

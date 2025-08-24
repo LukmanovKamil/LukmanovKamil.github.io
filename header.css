@@ -1,7 +1,6 @@
 header {
     background: var(--gradient);
     display: flex;
-    height: 120px;
 }
 
 header .header {
@@ -10,6 +9,7 @@ header .header {
     align-items: center;
     width: 70%;
     margin: auto;
+    padding: 10px 0;
 }
 
 header .logo {
@@ -19,7 +19,8 @@ header .logo {
 
 header .logo img {
     width: 85px;
-    pointer-events: none
+    pointer-events: none;
+    display: block;
 }
 
 header .name {
@@ -64,41 +65,97 @@ header .nav a:not(.active):hover {
 
 
 
+header .header-mobile {
+    display: none;
+    margin: auto;
+    align-items: center;
+    padding: 10px 0;
+}
+
+header .logo-mobile img{
+    height: 110px;
+    display:block
+}
+
+header .nav-mobile {
+    margin-left: 30px;
+}
+
+header .name-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header .name1-mobile {
+    font-family: "TTNorms-bold";
+    font-size: 26px;
+    white-space: nowrap;
+}
+
+header .name2-mobile {
+    font-size: 15px;
+}
+
+
+header .icons {
+    padding-top: 5px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .icons a {
+    border-radius: 50%;
+    background: var(--light);
+    transition: background 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+header .icons a img {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+header .header-mobile .icons a.active {
+    background: var(--purple-light);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
-    header {
-        height: auto;
-    }
-
-    header .header {
-        flex-direction: column;
-        padding: 5px;
-        width: 100%;
-    }
-
-    header .nav {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    header .nav a {
-        margin: 5px 20px;
-        font-size: 16px;
-    }
-
-    header .name {
-    margin: 0 0 0 30px;
+header .header {
+    display: none;
 }
 
-    header .name1 {
-        font-size: 25px;
-    }
+header .header-mobile {
+    display: flex;
+}
 
-    header .name2 {
-        font-size: 15px;
-    }
+header .active {
+    border-bottom: 0px solid var(--light);
+    border-radius: 0px;
+}
 
 }
+
