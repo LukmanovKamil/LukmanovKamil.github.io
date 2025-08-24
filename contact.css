@@ -83,6 +83,7 @@ header {
   object-fit: cover;
   border: 4px solid var(--purple-light);
   cursor: pointer;
+  transition: all 250ms ease;
 }
 
 /* Текстовые стили */

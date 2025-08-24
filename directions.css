@@ -38,6 +38,12 @@
   cursor: text;
 }
 
+@media (hover: hover) {
+.np:hover {
+    cursor: pointer;
+}
+}
+
 .foto {
     border-radius: 100%;  
     cursor: pointer;
@@ -90,16 +96,9 @@
 
 .zag b {
     font-size: 20px;
-    color: var(--purple-light);
+    color: var(--purple-dark);
     
 }
-
-@media (hover: hover) {
-.zag b:hover {
-    text-decoration: underline;
-}
-}
-
 
 
 
@@ -510,18 +509,9 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .zag b {
     font-size: 16px;
-    color: var(--purple-light);
+    color: var(--purple-dark);
     white-space: nowrap;
 }
-
-@media (hover: hover) {
-.zag b:hover {
-    text-decoration: underline;
-}
-}
-
-
-
 
 
 /* Педагоги */
@@ -798,3 +788,11 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 }
+
+
+
+
+
+
+
+

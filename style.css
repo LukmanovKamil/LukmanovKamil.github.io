@@ -1,12 +1,12 @@
 /* Шрифты */
 @font-face {
     font-family: "TTNorms-Regular";
-    src: url(/font/TTNorms-Regular.ttf);
+    src: url(/font/TTNorms-Regular.woff2);
 }
 
 @font-face {
     font-family: "TTNorms-Bold";
-    src: url(/font/TTNorms-Bold.ttf);
+    src: url(/font/TTNorms-Bold.woff2);
 }
 
 

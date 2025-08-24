@@ -1,42 +1,47 @@
 // Переключиние кнопки актив в педагогах
 $(document).ready(function() {
-    // Обработчик клика на элемент с классом .foto
-    $('.foto').click(function(e) {
-        e.preventDefault(); // Отменяем стандартное поведение ссылки
-
+    function activateItem($item) {
         // Убираем класс активности со всех фото и прячем всех педагогов
         $('.foto').removeClass('activ');
         $('.pd').hide();
 
-        // Добавляем класс активности к кликнутому фото
-        $(this).addClass('activ');
+        // Добавляем класс активности к выбранному фото
+        $item.addClass('activ');
 
         // Получаем id педагога из атрибута href ссылки внутри фото (убираем #)
-        let targetId = $(this).find('a.ft').attr('href').substring(1);
+        let targetId = $item.find('a.ft').attr('href').substring(1);
 
         // Показываем блок педагога с классом, соответствующим targetId
         $('.' + targetId).show();
 
-        // Скроллим страницу к блоку педагога при клике
-        // Без анимации, сразу перескакиваем
+        // Скроллим страницу к блоку педагога при клике (без анимации)
         $('html, body').scrollTop($('.' + targetId).offset().top);
+    }
+
+    // Клик по фото
+    $('.foto').click(function(e) {
+        e.preventDefault();
+        activateItem($(this));
     });
 
-    // При загрузке страницы:
-    // Находим первое фото с классом 'activ'
+    // Клик по заголовку — активируем соседнее фото
+    $('.zag').click(function() {
+        let $foto = $(this).siblings('.foto');
+        if ($foto.length) {
+            activateItem($foto);
+        }
+    });
+
+    // При загрузке страницы показываем первого активного педагога
     let firstActive = $('.foto.activ');
     if (firstActive.length) {
-        // Получаем targetId для этого фото
         let targetId = firstActive.find('a.ft').attr('href').substring(1);
-
-        // Прячем всех педагогов
         $('.pd').hide();
-
-        // Показываем педагога, соответствующего активному фото
-        // При загрузке скролл не делаем, чтобы страница не прыгала
         $('.' + targetId).show();
+        // Не скроллим при загрузке
     }
 });
+
 
 
 
