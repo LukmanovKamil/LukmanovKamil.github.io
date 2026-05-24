@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="./img/apple-icon.png">
+    <meta name="theme-color" content="#9526c0">
+    <link rel="icon" href="./img/icon.png">
+    <title>FREE MOTION - Расписание</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="stylesheet" href="./src/index.css">
+    <script>
+        const hour = new Date().getHours();
+        if (hour >= 20 || hour < 8) {
+            document.documentElement.classList.add('dark');
+            document.querySelector("link[rel='icon']").href = "./img/icon-dark.png";
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="brand">
+                <img src="./img/logo.png">
+                <div class="titles">
+                    <p class="title">FREE MOTION</p>
+                    <p class="subtitle">Расписание</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <p class="card-title">Зал 1</p>
+            </div>
+            <div class="card-table">
+                <div class="table-title date">Дата</div>
+                <div class="table-title time">Время</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <p class="card-title">Зал 2</p>
+            </div>
+            <div class="card-table">
+                <div class="table-title date">Дата</div>
+                <div class="table-title time">Время</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>FREE MOTION - Расписание</p>
+    </footer>
+
+    <div class="popup">
+        <div class="popup-card">
+            <div class="popup-titles">
+                <div class="popup-title"></div>
+                <div class="popup-subtitle"></div>
+            </div>
+            <div class="popup-button"></div>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-card">
+            <div class="modal-titles">
+                <div class="modal-title"></div>
+                <div class="modal-subtitle"></div>
+            </div>
+            <div class="modal-button">
+                <button class="modal-yes"></button>
+                <button class="modal-no"></button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+
+</body>
+
+</html>
