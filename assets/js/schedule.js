@@ -285,11 +285,8 @@ onValue(ref(dataBase, "closed"), (snapshot) => {
         });
     });
 
-     // 1. выравниваем логотип
-  loader.classList.add("done");
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 3000);
 
-  // 2. даём время на анимацию
-  setTimeout(() => {
-    loader.classList.add("hide");
-  }, 800);
 });

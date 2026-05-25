@@ -14,9 +14,7 @@
 </head>
 
 <body>
-    <div id="loader">
-        <img id="loader-logo" src="/assets/icons/icon.png" >
-    </div>
+    
 
     <header>
         <div class="header">
@@ -79,12 +77,16 @@
         </div>
     </div>
 
+    <div id="loader">
+        <img id="loader-logo" src="/assets/icons/icon.png" >
+    </div>
+
     <script type="module" src="/assets/js/schedule.js"></script>
 
     <script>
         const hour = new Date().getHours();
         if (hour >= 20 || hour < 8) {
-        // if (hour < 18) {    
+        // if (hour > 18) {    
             document.documentElement.classList.add('dark');
             document.getElementById("favicon").href = "/assets/icons/icon-dark.png";
             document.getElementById("loader-logo").src = "/assets/icons/icon-dark.png";

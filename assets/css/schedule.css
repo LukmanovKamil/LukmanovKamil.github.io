@@ -447,7 +447,17 @@ main {
 
 
 
-/* Загрузчик */
+
+
+
+
+
+
+
+
+
+
+
 #loader {
     position: fixed;
     inset: 0;
@@ -461,23 +471,50 @@ main {
 #loader-logo {
     width: 130px;
     height: 130px;
+    border-radius: 100%;
     transform: rotate(-30deg) scale(0.7);
-    /* opacity: 0.6; */
-    transition: transform 0.8s ease, opacity 0.8s ease;
+    filter: blur(5px);
+    color: var(--purple-light);
+    animation:
+        one 0.8s ease forwards 0.3s,
+        two 2.6s ease-in-out 1.7s infinite;
 }
 
-#loader.done #loader-logo {
-    transform: rotate(0deg) scale(1);
-    opacity: 1;
+@keyframes one {
+    0% {
+        opacity: 1;
+        transform: rotate(-30deg) scale(0.7);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        filter: blur(0);
+    }
 }
 
-#loader.hide {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-}
+@keyframes two {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0px currentColor;
+    }
 
+    50% {
+        transform: scale(0.7);
+        box-shadow: 0 0 100px 30px currentColor;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0px currentColor;
+    }
+}
 
 .dark #loader {
     background: var(--dark);
+}
+
+.dark #loader-logo {
+    color: var(--light);
 }
