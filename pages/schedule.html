@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FREE MOTION - Расписание</title>
-    <meta name="theme-color" content="#9526c0">
+    <meta id="theme-color" name="theme-color" content="#9526c0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link id="favicon" rel="icon" href="/assets/icons/icon.png">
     <link rel="apple-touch-icon" href="/assets/icons/icon-schedule.png">
@@ -90,6 +90,7 @@
             document.documentElement.classList.add('dark');
             document.getElementById("favicon").href = "/assets/icons/icon-dark.png";
             document.getElementById("loader-logo").src = "/assets/icons/icon-dark.png";
+            document.getElementById("theme-color").content = "#171717";
         }
     </script>
 </body>
