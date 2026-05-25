@@ -83,8 +83,8 @@
 
     <script>
         const hour = new Date().getHours();
-        // if (hour >= 20 || hour < 8) {
-        if (hour < 18) {    
+        if (hour >= 20 || hour < 8) {
+        // if (hour < 18) {    
             document.documentElement.classList.add('dark');
             document.getElementById("favicon").href = "/assets/icons/icon-dark.png";
             document.getElementById("loader-logo").src = "/assets/icons/icon-dark.png";
