@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.card {
+    gap: 20px;
+    padding: 40px 50px 0px;
+    text-align: center;
+}
+
+.brand {
+    gap: 20px;
+}
+
+.brand img {
+    height: 100px;
+}
+
+.title {
+    color: var(--purple-light);
+    font-size: var(--text26);
+}
+
+.subtitle {
+    color: var(--purple-light);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form p:first-of-type {
+    color: var(--purple-light);
+    padding-bottom: 10px;
+}
+
+.input {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--purple-light);
+    border-radius: var(--radius-small);
+    font-size: var(--text18);
+    color: var(--purple-light);
+    text-align: center;
+    background: var(--light);
+}
+
+@media (hover: hover) {
+    input:hover {
+        background: var(--glass);
+    }
+}
+
+.input input:focus {
+    outline: 1px solid var(--purple-light);
+}
+
+.input label {
+    position: absolute;
+    bottom: 80%;
+    left: 10%;
+    color: var(--purple-light);
+    background: var(--light);
+    padding: 0 5px;
+    border-radius: var(--radius-small);
+    border: 1px solid var(--light);
+    font-size: 13px;
+}
+
+@media (hover: hover) {
+    .input input:hover + label {
+        background: var(--glass);
+        border: 1px solid var(--purple-light);
+    }
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--light);
+    border-radius: var(--radius-small);
+    font-size: var(--text15);
+    background: var(--gradient);
+    color: var(--light);
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    button:hover {
+        background: var(--purple-light);
+    }
+}
+
+.error {
+    padding: 10px 0;
+    color: var(--purple-light);
+    opacity: 0;
+}
+
+.error.show {
+    opacity: 1;
+}
+
+
+
+
+
+/* Мобилка */
+@media (max-width: 480px) {
+    .card {
+        background: var(--light);
+        border: 1px solid transparent;
+        box-shadow: none;
+    }
+}

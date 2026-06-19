@@ -1,0 +1,23 @@
+footer {
+    position: sticky;
+    left: 0;
+    right: 0;
+}
+
+.footer {
+    padding: 10px 0;
+    text-align: center;
+    color: var(--purple-light);
+    border-top: 1px solid var(--glass);
+}
+
+
+
+
+
+/* Мобилка */
+@media (max-width: 480px) {
+    footer {
+        width: 100dvw;
+    }
+}

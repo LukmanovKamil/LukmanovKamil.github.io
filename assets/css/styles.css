@@ -1,0 +1,76 @@
+/* Импорты */
+@import "/assets/css/header.css";
+@import "/assets/css/main.css";
+@import "/assets/css/footer.css";
+@import "/assets/css/loader.css";
+@import "/assets/css/modal.css";
+
+@font-face {
+    font-family: "TTNorms";
+    src: url("/assets/fonts/TTNorms-Regular.woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "TTNorms";
+    src: url("/assets/fonts/TTNorms-Bold.woff2");
+    font-weight: 700;
+}
+
+:root {
+    --light: #f7fcfc;
+    --dark: #171717;
+    --purple-light: #9526c0;
+    --purple-dark: #5a205a;
+    --glass: #f2f0fa;
+    --white: #ffffff;
+    --gradient: linear-gradient(10deg, var(--purple-dark) 0%, var(--purple-light) 100%);
+    --radius-small: 30px;
+    --radius-big: 50px;
+    --shadow: 0 5px 25px #17171710;
+    --text15: 15px;
+    --text18: 18px;
+    --text22: 22px;
+    --text26: 26px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "TTNorms";
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+body {
+    background: var(--light);
+    font-size: var(--text15);
+}
+
+.topbar {
+    pointer-events: none;
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 11px;
+    background: #9526c0;
+    mask-image: linear-gradient(to right, transparent, transparent);
+}
+
+.bottombar {
+    pointer-events: none;
+    position: fixed;
+    bottom: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 11px;
+    background: #9526c0;
+    mask-image: linear-gradient(to right, transparent, transparent);
+}
