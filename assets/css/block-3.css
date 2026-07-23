@@ -42,3 +42,39 @@
     width: 100%;
     scroll-snap-align: start;
 }
+
+
+
+
+
+.block-3-3 {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    grid-column: 1 / -1;
+}
+
+.block-3-3 > img {
+    border-radius: 0 0 25px 25px;
+}
+
+.block-3-3 > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 40px;
+}
+
+.block-3-3 > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.block-3-3 > div > div > img {
+    height: 24px;
+}
+
+.block-3-3 audio {
+    width: 100%;
+}
