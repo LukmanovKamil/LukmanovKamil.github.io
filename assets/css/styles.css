@@ -100,8 +100,22 @@ body {
     height: 40px;
 }
 
+.header div{
+    display: flex;
+    gap: 10px;
+}
+
 .header p {
     text-align: center;
+}
+
+.header div > p {
+    padding: 5px 10px;
+    border-radius: 25px;
+    background: var(--light);
+    color: var(--dark);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 main {
