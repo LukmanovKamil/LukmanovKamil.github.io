@@ -1,0 +1,44 @@
+.block-3-1 {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    grid-column: 1 / -1;
+}
+
+.block-3-1 > img {
+    border-radius: 0 0 25px 25px;
+}
+
+.block-3-1 > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 40px 20px;
+}
+
+.block-3-1 > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.block-3-1 > div > div > img {
+    height: 24px;
+}
+
+
+
+
+
+.block-3-2 {
+    display: flex;
+    grid-column: 1 / -1;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.block-3-2 img {
+    width: 100%;
+    scroll-snap-align: start;
+}
